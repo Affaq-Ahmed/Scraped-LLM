@@ -49,4 +49,12 @@ export class SourceService {
       throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
+
+  async deleteSource(sourceId: string): Promise<Source> {
+    try {
+      return await this.sourceModel.findByIdAndDelete(sourceId);
+    } catch (error) {
+      throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+  }
 }

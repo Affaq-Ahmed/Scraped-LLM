@@ -1,6 +1,7 @@
 import {
   Body,
   Controller,
+  Delete,
   Get,
   HttpCode,
   Param,
@@ -32,5 +33,10 @@ export class SourceController {
     @Body() sourceDto: SourceUpdateDto,
   ) {
     return this.sourceService.updateSource(sourceId, sourceDto);
+  }
+
+  @Delete(':sourceId')
+  async deleteSource(@Param('sourceId') sourceId: string) {
+    return this.sourceService.deleteSource(sourceId);
   }
 }
