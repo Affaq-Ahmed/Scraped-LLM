@@ -5,14 +5,16 @@ export type SourceDocument = Source & Document;
 
 @Schema({ timestamps: true })
 export class Source {
-  @Prop()
-  sourceId: string; // unique identifier for the source
-
-  @Prop()
+  @Prop({
+    unique: true,
+    lowercase: true,
+    type: String,
+    required: [true, "can't be blank"],
+  })
   name: string; // human-readable name of the source
 
-  @Prop()
-  baseUrl: string; // optional base URL for the source (if applicable)
+  @Prop({ String, required: [true, "can't be blank"] })
+  baseUrl: string;
 
   @Prop()
   apiEndpoint: string; // optional API endpoint for scraping data (if using APIs)
