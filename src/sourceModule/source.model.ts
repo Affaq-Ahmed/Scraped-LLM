@@ -13,13 +13,13 @@ export class Source {
   })
   name: string; // human-readable name of the source
 
-  @Prop({ String, required: [true, "can't be blank"] })
+  @Prop({ type: String, required: [true, "can't be blank"] })
   baseUrl: string;
 
-  @Prop()
+  @Prop({ type: String })
   apiEndpoint: string; // optional API endpoint for scraping data (if using APIs)
 
-  @Prop()
+  @Prop({ type: String })
   configuration: any; // optional field for source-specific scraping configurations (e.g., selectors for web scraping)
 }
 

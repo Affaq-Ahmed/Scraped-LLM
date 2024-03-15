@@ -6,7 +6,7 @@ import { ScrapedData } from './scrapedData.model';
 @Injectable()
 export class ScrapedDataService {
   constructor(
-    @InjectModel('ScrapingCriteria')
+    @InjectModel('ScrapedData')
     private readonly scrapedDataModel: Model<ScrapedData>,
   ) {}
   // Implement service methods for CRUD operations
