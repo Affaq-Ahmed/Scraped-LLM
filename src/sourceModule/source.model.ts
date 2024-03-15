@@ -6,10 +6,10 @@ export type SourceDocument = Source & Document;
 @Schema({ timestamps: true })
 export class Source {
   @Prop({
-    unique: true,
-    lowercase: true,
     type: String,
     required: [true, "can't be blank"],
+    unique: true,
+    lowercase: true,
   })
   name: string; // human-readable name of the source
 

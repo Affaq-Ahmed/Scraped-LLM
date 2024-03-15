@@ -13,10 +13,10 @@ import { ScrapedDataModule } from './scrapedData/scrapedData.module';
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
-    ScrapingModule,
-    ScrapingCriteriaModule,
     SourceModule,
     ScrapedDataModule,
+    ScrapingCriteriaModule,
+    ScrapingModule,
     MongooseModule.forRoot(process.env.DB_URL),
   ],
   controllers: [AppController],
