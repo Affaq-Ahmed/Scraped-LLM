@@ -14,8 +14,11 @@ export class ScrapedData {
   @Prop()
   url: string;
 
-  @Prop({ type: Date })
-  postTimestamp: Date;
+  @Prop()
+  num_of_likes: number;
+
+  @Prop()
+  num_of_comments: number;
 
   @Prop()
   metadata: string; // optional for additional scraped data
