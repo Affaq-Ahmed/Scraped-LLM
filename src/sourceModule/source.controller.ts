@@ -27,6 +27,11 @@ export class SourceController {
     return this.sourceService.getAllSources();
   }
 
+  @Get(':sourceId')
+  async getSource(@Param('sourceId') sourceId: string) {
+    return this.sourceService.getSourceById(sourceId);
+  }
+
   @Put(':sourceId')
   async updateSource(
     @Param('sourceId') sourceId: string,
