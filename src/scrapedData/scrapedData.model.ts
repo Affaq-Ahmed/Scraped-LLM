@@ -20,9 +20,6 @@ export class ScrapedData {
   @Prop()
   num_of_comments: number;
 
-  @Prop()
-  metadata: string; // optional for additional scraped data
-
   @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Source' })
   source: string; // reference to the Source model
 
