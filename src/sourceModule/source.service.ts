@@ -35,6 +35,14 @@ export class SourceService {
     }
   }
 
+  async getSourceById(sourceId: string): Promise<Source> {
+    try {
+      return await this.sourceModel.findById(sourceId);
+    } catch (error) {
+      throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+  }
+
   async updateSource(
     sourceId: string,
     sourceDto: Partial<Source>,
