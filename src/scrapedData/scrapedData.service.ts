@@ -34,7 +34,15 @@ export class ScrapedDataService {
         );
       }
 
-      const newScrapedData = new this.scrapedDataModel(data);
+      const newScrapedData = new this.scrapedDataModel({
+        title,
+        content,
+        url,
+        num_of_likes,
+        num_of_comments,
+        source,
+        scrapingCriteria,
+      });
       return await newScrapedData.save();
     } catch (error) {
       console.log(error);
