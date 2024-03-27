@@ -14,11 +14,11 @@ export class ScrapedData {
   @Prop()
   url: string;
 
-  @Prop({ type: Date })
-  postTimestamp: Date;
+  @Prop()
+  num_of_likes: number;
 
   @Prop()
-  metadata: string; // optional for additional scraped data
+  num_of_comments: number;
 
   @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Source' })
   source: string; // reference to the Source model

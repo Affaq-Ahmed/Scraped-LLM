@@ -36,3 +36,6 @@ lerna-debug.log*
 
 #dotenv files
 .env
+
+#json file for testing
+a.json
